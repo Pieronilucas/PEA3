@@ -1,7 +1,7 @@
 ﻿@{
 	ViewData["Title"] = "Listagem de eventos";
 
-	// Exemplo de lista de eventos (substituir por seu model real)
+
 	var eventos = new List<dynamic>
 	{
 		new { Titulo = "Show do Manoel Gomes", Data = "16/08 18:00", Local = "Divinóia", ImagemUrl = "caminho-imagem.jpg" },
@@ -11,6 +11,9 @@
 }
 
 <div class="container">
+	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		<a class="btn btn-info" role="button" asp-controller="ControleDeEventos" asp-action="CadastrarEventos">Criar novo evento</a>
+	</div>
 	<h1 class="display-4 mb-4">Listagem de eventos</h1>
 	<div class="row">
 		@foreach (var evento in eventos)
