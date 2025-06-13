@@ -18,12 +18,12 @@ body {
     padding: 0;
     margin-bottom: 60px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #f0f4f8, #ffffff);
+    background: linear-gradient(180deg, #f0f4f8, #c2fbff);
     color: #333;
     transition: background 0.3s ease;
 }
 
-/* Botões */
+/* Botï¿½es */
 .btn {
     display: inline-block;
     padding: 0.6rem 1.2rem;
@@ -52,7 +52,7 @@ body {
         box-shadow: 0 0 0 3px rgba(37, 140, 251, 0.4);
     }
 
-/* Inputs e formulários */
+/* Inputs e formulï¿½rios */
 .form-control {
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -65,7 +65,7 @@ body {
         box-shadow: 0 0 0 3px rgba(37, 140, 251, 0.25);
     }
 
-/* Animação de fade-in em elementos */
+/* Animaï¿½ï¿½o de fade-in em elementos */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);

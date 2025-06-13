@@ -1,95 +1,91 @@
-﻿
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="px-40 flex flex-1 justify-center py-5">
-    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-        <div class="@@container">
-            <div class="@@[480px]:p-4">
-                <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @@[480px]:gap-8 @@[480px]:rounded-xl items-center justify-center p-4"
-                     style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://static3.depositphotos.com/1005782/208/i/450/depositphotos_2087641-stock-photo-yellow-concert-crowd.jpg");'>
-                    <div class="flex flex-col gap-2 text-center">
-                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @@[480px]:text-5xl @@[480px]:font-black @@[480px]:leading-tight @@[480px]:tracking-[-0.033em]">
-                            Onde a diversão ganha data e lugar!
-                        </h1>
-                        <h2 class="text-white text-sm font-normal leading-normal @@[480px]:text-base @@[480px]:font-normal @@[480px]:leading-normal">
-                            Nosso serviço é especializado em criar eventos personalizados, adaptados à sua visão única. De reuniões intimistas a grandes celebrações, cuidamos de cada detalhe com precisão e cuidado.
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container py-5">
 
-        <h2 class="text-[#191011] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
-            Curiosidades sobre a gente
-        </h2>
-
-        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-            <div class="flex flex-col gap-3 pb-3">
-                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                     style='background-image: url("https://oimparcial.com.br/app/uploads/2021/04/azul-caneta.jpg");'></div>
-                <div>
-                    <p class="text-[#191011] text-base font-medium leading-normal">Grande Artista</p>
-                    <p class="text-[#8b5b5d] text-sm font-normal leading-normal">Caneta Azul, grande ícone da música brasileira que já trabalhou conosco!</p>
-                </div>
+    <!-- Banner -->
+    <div class="position-relative text-white mb-5 rounded shadow overflow-hidden">
+        <img src="https://static3.depositphotos.com/1005782/208/i/450/depositphotos_2087641-stock-photo-yellow-concert-crowd.jpg"
+            class="w-100" style="height: 400px; object-fit: cover;" />
+        <div
+            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3">
+            <div class="text-center">
+                <h1 class="display-5 fw-bold">Onde a diversão ganha data e lugar!</h1>
+                <p class="lead">Nosso serviço é especializado em criar eventos personalizados, adaptados à sua visão
+                    única. De reuniões intimistas a grandes celebrações, cuidamos de cada detalhe com precisão e
+                    cuidado.</p>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                     style='background-image: url("https://cdn-icons-png.flaticon.com/512/1746/1746650.png");'></div>
-                <div>
-                    <p class="text-[#191011] text-base font-medium leading-normal">Eventos com segurança!</p>
-                    <p class="text-[#8b5b5d] text-sm font-normal leading-normal">Sua segurança está garantida conosco!</p>
-                </div>
-            </div>
-            <div class="flex flex-col gap-3 pb-3">
-                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                     style='background-image: url("https://extra.globo.com/incoming/25655547-e96-d7d/w976h550-PROP/formatura.jpg");'></div>
-                <div>
-                    <p class="text-[#191011] text-base font-medium leading-normal">Fazemos qualquer tipo de festa!</p>
-                    <p class="text-[#8b5b5d] text-sm font-normal leading-normal">Fazemos acontecer algo marcante para que seja lembrado por todos!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-col gap-10 px-4 py-10 @@container">
-            <div class="flex flex-col gap-4">
-                <h1 class="text-[#191011] tracking-light text-[32px] font-bold leading-tight @@[480px]:text-4xl @@[480px]:font-black @@[480px]:leading-tight @@[480px]:tracking-[-0.033em] max-w-[720px]">
-                    O que nós oferecemos?
-                </h1>
-                <p class="text-[#191011] text-base font-normal leading-normal max-w-[720px]"></p>
-            </div>
-
-            <div class="relative @@[480px]:p-4">
-                <div class="relative flex min-h-[480px] flex-col gap-6 items-center justify-center p-4 @@[480px]:gap-8 @@[480px]:rounded-xl overflow-hidden">
-                    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat blur-sm"
-                         style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://m.media-amazon.com/images/I/71I6spTMxaL._AC_UF894,1000_QL80_.jpg");'></div>
-                    <div class="flex flex-col gap-2 text-center z-10 text-white">
-                        <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] @@[480px]:text-5xl @@[480px]:leading-tight">
-                            Somos tudo que você precisa!
-                        </h1>
-                        <h2 class="text-sm font-normal leading-normal @@[480px]:text-base">
-                            Nós cuidamos da parte burocrática e deixamos a diversão inteira com você, para que você possa aproveitar cada segundo do melhor dia da sua vida.
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <footer class="flex justify-center">
-                <div class="flex max-w-[960px] flex-1 flex-col">
-                    <footer class="flex flex-col gap-6 px-5 py-10 text-center @@container">
-                        <div class="flex flex-wrap items-center justify-center gap-6 @@[480px]:flex-row @@[480px]:justify-around">
-                            <a class="text-[#8b5b5d] text-base font-normal leading-normal min-w-40" href="#">Home</a>
-                            <a class="text-[#8b5b5d] text-base font-normal leading-normal min-w-40" href="#">Servicos</a>
-                            <a class="text-[#8b5b5d] text-base font-normal leading-normal min-w-40" href="#">Contato</a>
-                            <a class="text-[#8b5b5d] text-base font-normal leading-normal min-w-40" href="#">Politica de privacidade</a>
-                            <a class="text-[#8b5b5d] text-base font-normal leading-normal min-w-40" href="#">Termos de uso</a>
-                        </div>
-                        <p class="text-[#8b5b5d] text-base font-normal leading-normal">@@2024 Pequenos Eventos A3.</p>
-                        <p class="text-[#8b5b5d] text-base font-normal leading-normal">Todos os direitos reservados.</p>
-                    </footer>
-                </div>
-            </footer>
         </div>
     </div>
+
+    <!-- Curiosidades -->
+    <h2 class="fw-bold mb-4">Curiosidades sobre a gente</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://oimparcial.com.br/app/uploads/2021/04/azul-caneta.jpg" class="card-img-top rounded-0">
+                <div class="card-body">
+                    <h5 class="card-title">Grande Artista</h5>
+                    <p class="card-text text-muted">Caneta Azul, grande ícone da música brasileira que já trabalhou
+                        conosco!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159448.png" class="card-img-top" alt="Segurança">
+                <div class="card-body">
+                    <h5 class="card-title">Eventos com segurança!</h5>
+                    <p class="card-text text-muted">Sua segurança está garantida conosco!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://extra.globo.com/incoming/25655547-e96-d7d/w976h550-PROP/formatura.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Fazemos qualquer tipo de festa!</h5>
+                    <p class="card-text text-muted">Fazemos acontecer algo marcante para que seja lembrado por todos!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- O que oferecemos -->
+    <div class="my-5 p-5 bg-light rounded shadow">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <h2 class="fw-bold">O que nós oferecemos?</h2>
+                <p class="text-muted">
+                    Nós cuidamos da parte burocrática e deixamos a diversão inteira com você, para que você possa
+                    aproveitar cada segundo do melhor dia da sua vida.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://m.media-amazon.com/images/I/71I6spTMxaL._AC_UF894,1000_QL80_.jpg"
+                    class="img-fluid rounded" alt="O que oferecemos">
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé extra -->
+    <footer class="pt-4 mt-5 border-top text-center text-muted">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="text-decoration-none text-muted me-3" href="#">Home</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Serviços</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Contato</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Política de Privacidade</a>
+                <a class="text-decoration-none text-muted" href="#">Termos de Uso</a>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p>&copy; 2025 Pequenos Eventos A3. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </div>
