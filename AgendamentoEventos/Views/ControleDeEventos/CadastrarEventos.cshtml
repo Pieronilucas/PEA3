@@ -1,59 +1,97 @@
 ﻿@{
 	var agora = DateTime.Now;
-	var dataFormatada = agora.ToString("yyyy-MM-ddTHH:mm"); // Formato exigido por <input type="datetime-local">
+	var dataFormatada = agora.ToString("yyyy-MM-ddTHH:mm");
 }
 
-
+<!-- Inclua esses estilos/ícones se ainda não estiverem no layout -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-md-8 col-lg-6">
-		<h1 class="display-4">Cadastre seu evento!</h1>
 
+			<div class="text-center mb-4">
+				<h1 class="display-6">Cadastre seu evento!</h1>
+			</div>
+
+			<form method="post" enctype="multipart/form-data">
+				<div class="mb-3">
+					<label for="nomeCompleto" class="form-label">Nome Completo</label>
+					<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Insira o nome completo do responsável." autocomplete="name" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="telefone" class="form-label">Telefone</label>
+					<input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="tel" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="email" class="form-label">E-mail</label>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Insira seu e-mail para contato." autocomplete="email" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="artista" class="form-label">Nome do Artista</label>
+					<input type="text" class="form-control" id="artista" name="artista" placeholder="Nome do artista principal." required>
+				</div>
+
+				<div class="mb-3">
+					<label for="local" class="form-label">Local do Evento</label>
+					<input type="text" class="form-control" id="local" name="local" placeholder="Endereço ou nome do local do evento." required>
+				</div>
+
+				<div class="row mb-4">
+					<!-- Campo de imagem com ícone e preview -->
+					<div class="col-md-6 mb-3 mb-md-0">
+						<label for="imagemEvento" class="form-label">Imagem do Evento</label>
+						<div class="input-group">
+							<span class="input-group-text"><i class="bi bi-image"></i></span>
+							<input type="file" class="form-control form-control-sm" id="imagemEvento" name="imagemEvento" accept="image/*" required onchange="previewImagem(this)">
+						</div>
+						<img id="previewImagem" src="#" alt="Pré-visualização" class="img-fluid mt-2 rounded d-none" style="max-height: 200px;" />
+					</div>
+
+					<!-- Campo data/hora com tooltip -->
+					<div class="col-md-6">
+						<label for="dataEvento" class="form-label">
+							Data e Hora
+							<i class="bi bi-info-circle" data-bs-toggle="tooltip" title="Escolha uma data e horário para o início do evento."></i>
+						</label>
+						<input type="datetime-local"
+						       class="form-control form-control-sm"
+						       id="dataEvento"
+						       name="dataEvento"
+						       value="@dataFormatada"
+						       min="@dataFormatada"
+						       required />
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary w-100">
+					<i class="bi bi-send-fill me-2"></i>Cadastrar Evento
+				</button>
+			</form>
+		</div>
 	</div>
-
-	<form>
-		<div class="mb-3">
-			<label for="nomeCompleto" class="form-label">Nome Completo</label>
-			<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Insira o nome completo do responsável." autocomplete="name" required>
-		</div>
-
-		<div class="mb-3">
-			<label for="telefone" class="form-label">Telefone</label>
-			<input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="tel" required>
-		</div>
-
-		<div class="mb-3">
-			<label for="email" class="form-label">E-mail</label>
-			<input type="email" class="form-control" id="email" name="email" placeholder="Insira seu e-mail para contato." autocomplete="email" required>
-		</div>
-
-		<div class="mb-3">
-			<label for="artista" class="form-label">Nome do Artista</label>
-			<input type="text" class="form-control" id="artista" name="artista" placeholder="Nome do artista principal." required>
-		</div>
-
-		<div class="mb-3">
-			<label for="local" class="form-label">Local do Evento</label>
-			<input type="text" class="form-control" id="local" name="local" placeholder="Endereço ou nome do local do evento." required>
-		</div>
-		<div class="row mb-4">
-			<div class="col-md-6 mb-3 mb-md-0">
-				<label for="imagemEvento" class="form-label">Imagem do Evento</label>
-				<input type="file" class="form-control form-control-sm" id="imagemEvento" name="imagemEvento" accept="image/*" required>
-			</div>
-			<div class="col-md-6">
-				<label for="dataEvento" class="form-label">Data e Hora</label>
-				<input type="datetime-local"
-				       class="form-control form-control-sm"
-				       id="dataEvento"
-				       name="dataEvento"
-				       value="@dataFormatada"
-				       min="@dataFormatada"
-				       required />
-			</div>
-		</div>
-
-		<button type="submit" class="btn btn-primary w-100">Cadastrar Evento</button>
-	</form>
 </div>
+
+<!-- JS: Preview da imagem e tooltip -->
+<script>
+	function previewImagem(input) {
+		if (input.files && input.files[0]) {
+			const reader = new FileReader();
+			reader.onload = function (e) {
+				const preview = document.getElementById('previewImagem');
+				preview.src = e.target.result;
+				preview.classList.remove('d-none');
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	// Ativa os tooltips do Bootstrap 5
+	const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+	tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+		new bootstrap.Tooltip(tooltipTriggerEl);
+	});
+</script>

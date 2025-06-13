@@ -4,9 +4,9 @@
 
 	var eventos = new List<dynamic>
 	{
-		new { Titulo = "Show do Manoel Gomes", Data = "16/08 18:00", Local = "Divinóia", ImagemUrl = "caminho-imagem.jpg" },
-		new { Titulo = "Show da Banda X", Data = "20/08 20:30", Local = "São Paulo", ImagemUrl = "caminho-imagem.jpg" },
-		new { Titulo = "Festival Rock", Data = "01/09 16:00", Local = "Belo Horizonte", ImagemUrl = "caminho-imagem.jpg" }
+		new { Titulo = "Show do Manoel Gomes", Data = "16/08 18:00", Local = "Divinóia", ImagemUrl = "https://oimparcial.com.br/app/uploads/2021/04/azul-caneta.jpg" },
+		new { Titulo = "Show da Banda X", Data = "20/08 20:30", Local = "São Paulo", ImagemUrl = "https://cdn-images.dzcdn.net/images/cover/052a6db952552c1bf9ea03573ae06ed4/0x1900-000000-80-0-0.jpg" },
+		new { Titulo = "Festival Rock", Data = "01/09 16:00", Local = "Belo Horizonte", ImagemUrl = "https://portalbelohorizonte.com.br/sites/default/files/styles/normal_size/public/arquivos/eventos/2024-12/453785951_792098653132624_430144111461666994_n_0.jpg?itok=L6icN3tx" }
 	};
 }
 
@@ -25,8 +25,8 @@
 						<h5 class="card-title">@evento.Titulo</h5>
 						<p class="card-text">@evento.Data</p>
 						<p class="card-text">@evento.Local</p>
-						<a href="#" class="btn btn-primary me-2">Ver evento</a>
-						<a href="#" class="btn btn-success">Comprar agora</a>
+						<a class="btn btn-primary me-2" role="button" asp-controller="ControleDeEventos" asp-action="VerEvento">Ver evento</a>
+						<a class="btn btn-success" role="button" asp-controller="ControleDeEventos" asp-action="ComprarAgora">Comprar agora</a>
 					</div>
 				</div>
 			</div>
