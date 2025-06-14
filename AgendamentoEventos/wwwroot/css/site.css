@@ -94,3 +94,18 @@ a {
     a:hover {
         color: #1a6edb;
     }
+
+/* Estilo padrão para todas as imagens dos cards */
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0; /* remove cantos arredondados da imagem para combinar com o card */
+}
+
+/* Estilo específico para imagens de ícones (como o de segurança) */
+.card-img-top.icon-img {
+    object-fit: contain !important;
+    padding: 20px;
+    background-color: white;
+}
