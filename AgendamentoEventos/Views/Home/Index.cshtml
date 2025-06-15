@@ -1,9 +1,90 @@
-﻿
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Seja bem vindo!</h1>
-    <a>A maior e mais mentirosa plataforma de agendamento de eventos da América Latina</a>
+<div class="container py-5">
+
+    <!-- Banner -->
+    <div class="position-relative text-white mb-5 rounded shadow overflow-hidden">
+        <img src="https://static3.depositphotos.com/1005782/208/i/450/depositphotos_2087641-stock-photo-yellow-concert-crowd.jpg"
+            class="w-100" style="height: 400px; object-fit: cover;" />
+        <div
+            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-3">
+            <div class="text-center">
+                <h1 class="display-5 fw-bold">Onde a diversão ganha data e lugar!</h1>
+                <p class="lead">Nosso serviço é especializado em criar eventos personalizados, adaptados à sua visão
+                    única. De reuniões intimistas a grandes celebrações, cuidamos de cada detalhe com precisão e
+                    cuidado.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curiosidades -->
+    <h2 class="fw-bold mb-4">Curiosidades sobre a gente</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://oimparcial.com.br/app/uploads/2021/04/azul-caneta.jpg" class="card-img-top" alt="Segurança">
+                <div class="card-body">
+                    <h5 class="card-title">Grande Artista</h5>
+                    <p class="card-text text-muted">Caneta Azul, grande ícone da música brasileira que já trabalhou conosco!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/9225442-ciberseguranca-acesso-protecao-de-dados-icone-linha-com-escudo-e-chave-vetor.jpg" class="card-img-top" alt="Segurança">
+                <div class="card-body">
+                    <h5 class="card-title">Eventos com segurança!</h5>
+                    <p class="card-text text-muted">Sua segurança está garantida conosco!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 rounded overflow-hidden shadow-sm">
+                <img src="https://www.opresente.com.br/wp-content/uploads/2019/08/thumbnail_WhatsApp-Image-2019-08-18-at-9.16.13-PM-1000x700.jpg" class="card-img-top" alt="Segurança"> 
+                <div class="card-body">
+                    <h5 class="card-title">Fazemos qualquer tipo de festa!</h5>
+                    <p class="card-text text-muted">Fazemos acontecer algo marcante para que seja lembrado por todos!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- O que oferecemos -->
+    <div class="my-5 p-5 bg-light rounded shadow">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <h2 class="fw-bold">O que nós oferecemos?</h2>
+                <p class="text-muted">
+                    Nós cuidamos da parte burocrática e deixamos a diversão inteira com você, para que você possa
+                    aproveitar cada segundo do melhor dia da sua vida.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://m.media-amazon.com/images/I/71I6spTMxaL._AC_UF894,1000_QL80_.jpg"
+                    class="img-fluid rounded" alt="O que oferecemos">
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé extra -->
+    <footer class="pt-4 mt-5 border-top text-center text-muted">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="text-decoration-none text-muted me-3" href="#">Home</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Serviços</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Contato</a>
+                <a class="text-decoration-none text-muted me-3" href="#">Política de Privacidade</a>
+                <a class="text-decoration-none text-muted" href="#">Termos de Uso</a>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p>&copy; 2025 Pequenos Eventos A3. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </div>
