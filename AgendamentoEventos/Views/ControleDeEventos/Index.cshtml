@@ -1,35 +1,41 @@
-﻿@{
-	ViewData["Title"] = "Listagem de eventos";
+﻿@model IEnumerable<AgendamentoEventos.Models.EventoModel>
 
-
-	var eventos = new List<dynamic>
-	{
-		new { Titulo = "Show do Manoel Gomes", Data = "16/08 18:00", Local = "Divinóia", ImagemUrl = "https://oimparcial.com.br/app/uploads/2021/04/azul-caneta.jpg" },
-		new { Titulo = "Show da Banda X", Data = "20/08 20:30", Local = "São Paulo", ImagemUrl = "https://cdn-images.dzcdn.net/images/cover/052a6db952552c1bf9ea03573ae06ed4/0x1900-000000-80-0-0.jpg" },
-		new { Titulo = "Festival lollapalooza", Data = "01/09 16:00", Local = "Belo Horizonte", ImagemUrl = "https://www.otempo.com.br/content/dam/otempo/editorias/economia/2022/9/economia-festivais-em-bh-festival-planeta-brasil-shows-em-bh-mercado-de-eventos-1709103382.jpeg" }
-	};
+@{
+    ViewData["Title"] = "Listagem de eventos";
 }
 
-<div class="container">
-	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-		<a class="btn btn-info" role="button" asp-controller="ControleDeEventos" asp-action="CadastrarEventos">Criar novo evento</a>
-	</div>
-	<h1 class="display-4 mb-4">Listagem de eventos</h1>
-	<div class="row">
-		@foreach (var evento in eventos)
-		{
-			<div class="col-md-4 mb-4">
-				<div class="card h-100 shadow-sm">
-					<img class="card-img-top" src="@evento.ImagemUrl" alt="Imagem do evento">
-					<div class="card-body p-3">
-						<h5 class="card-title">@evento.Titulo</h5>
-						<p class="card-text">@evento.Data</p>
-						<p class="card-text">@evento.Local</p>
-						<a class="btn btn-primary me-2" role="button" asp-controller="ControleDeEventos" asp-action="VerEvento">Ver evento</a>
-						<a class="btn btn-success" role="button" asp-controller="ControleDeEventos" asp-action="ComprarAgora">Comprar agora</a>
-					</div>
-				</div>
-			</div>
-		}
-	</div>
+<div class="container mt-4">
+
+    <header class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4 mb-0">Listagem de eventos</h1>
+        <a class="btn btn-primary" asp-controller="ControleDeEventos" asp-action="CadastrarEventos">
+            + Novo Evento
+        </a>
+    </header>
+
+    <div class="row">
+        @foreach (var evento in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img class="card-img-top" 
+                         src="@(evento.ImagemBytes != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(evento.ImagemBytes)}" : "/images/placeholder.png")" 
+                         alt="Imagem do evento" 
+                         style="max-height: 250px; object-fit: cover;">
+
+                    <div class="card-body p-3">
+                        <h5 class="card-title">@evento.Artista</h5>
+                        <p class="card-text mb-1"><strong>Data:</strong> @evento.DataHora.ToString("dd/MM/yyyy HH:mm")</p>
+                        <p class="card-text mb-1"><strong>Local:</strong> @evento.Localizacao</p>
+                        <p class="card-text text-success fw-semibold mb-3">
+                            <i class="bi bi-currency-dollar"></i> @evento.Preco.ToString("C", new System.Globalization.CultureInfo("pt-BR"))
+                        </p>
+                        <a class="btn btn-primary me-2" role="button" asp-controller="ControleDeEventos" asp-action="VerEvento">Ver evento</a>
+                        <a class="btn btn-success" role="button" asp-controller="ControleDeEventos" asp-action="ComprarAgora">Comprar agora</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
 </div>
